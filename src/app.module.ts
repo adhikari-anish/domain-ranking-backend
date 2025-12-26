@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { RankingModule } from './ranking/ranking.module';
+import { HealthModule } from './health/health.module';
 
 @Module({
   imports: [
@@ -43,6 +44,7 @@ import { RankingModule } from './ranking/ranking.module';
     }),
 
     RankingModule,
+    HealthModule,
   ],
 })
 export class AppModule {}
