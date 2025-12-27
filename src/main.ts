@@ -5,7 +5,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   app.enableCors({
-    origin: ['http://localhost:5173'], // Vue dev server
+    origin: (process.env.CORS_ORIGIN ?? 'http://localhost:5173').split(','),
   });
 
   await app.listen(process.env.PORT ?? 3000);
